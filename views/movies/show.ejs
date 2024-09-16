@@ -1,0 +1,18 @@
+<!-- views/movies/show.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= movie.title %> Details</title>
+</head>
+<body>
+  <h1><%= movie.title %></h1>
+  <p><strong>Director:</strong> <%= movie.director %></p>
+  <p><strong>Genre:</strong> <%= movie.genre %></p>
+  <p><strong>Release Year:</strong> <%= movie.releaseYear %></p>
+  <p><strong>Rating:</strong> <%= movie.rating %></p>
+  <p><strong>Available:</strong> <%= movie.isAvailable ? 'Yes' : 'No' %></p>
+  <a href="/movies">Back to Movies List</a>
+  <a href="/movies/<%= movie._id %>/edit">Edit Movie</a>
+</body>
+</html>

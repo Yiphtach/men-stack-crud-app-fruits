@@ -1,0 +1,24 @@
+<!-- views/movies/index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Movies List</title>
+</head>
+<body>
+  <h1>All Movies</h1>
+  <ul>
+    <% movies.forEach(movie => { %>
+      <li>
+        <a href="/movies/<%= movie._id %>"><%= movie.title %></a>
+        - Directed by <%= movie.director %>
+        <form action="/movies/<%= movie._id %>?_method=DELETE" method="POST">
+          <button type="submit">Delete</button>
+        </form>
+        <a href="/movies/<%= movie._id %>/edit">Edit</a>
+      </li>
+    <% }) %>
+  </ul>
+  <a href="/movies/new">Add a New Movie</a>
+</body>
+</html>
